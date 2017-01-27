@@ -1,0 +1,90 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+$theme = $this->helper('mtghost');
+?>
+<footer class="footer-container">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <div class="footer-top-inner">
+                    <div class="footer">
+                        <div class="section-space">
+                            <?php echo $this->getChildHtml('footer_bottom') ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="ection-space">
+                                <?php echo $this->getChildHtml('footer_bottom_logo') ?>
+                            </div>
+                        </div>
+                        <div class="text-center col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <address><?php echo $this->getCopyright() ?></address>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="social-space">
+                                <?php echo $this->getLayout()
+                                    ->createBlock('cms/block')
+                                    ->setBlockId('social')
+                                    ->toHtml();?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div id="back-top" class="hidden-phone">
+		<a href="#top">
+		<div class="sticker-wrapper">
+			<div class="sticker" title="<?php echo $this->__('Back to Top') ?>">
+			<i class="arrow_carrot-up"></i>
+			</div>
+		</div>
+		</a>
+	</div>
+</footer>
+<script>
+    $mt(function(){
+       $mt('.footer-item .footer-item-head').click(function(){
+           if($mt(this).parent('.footer-item').hasClass('active')){
+               $mt(this).parent('.footer-item').removeClass('active');
+           }
+           else{
+               $mt('.footer-item').removeClass('active');
+               $mt(this).parent('.footer-item').addClass('active');
+           }
+       });
+    });
+</script>
+
+
